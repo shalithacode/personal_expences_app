@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           title: Text("Flutter App"),
         ),
         body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
