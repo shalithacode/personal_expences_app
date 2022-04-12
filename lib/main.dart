@@ -11,18 +11,24 @@ class MyApp extends StatelessWidget {
 
   final List<Transaction> transaction = [
     Transaction(
-      id: 't1',
+      id: '1',
       title: 'New Shoes',
       amount: 69.99,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: '2',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
   ];
+
+  // String? titleInput;
+  // String? amountInput;
+
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -41,6 +47,38 @@ class MyApp extends StatelessWidget {
                   color: Colors.blueAccent,
                   child: Text("Chart!"),
                   elevation: 5,
+                ),
+              ),
+              Card(
+                elevation: 2,
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(labelText: "Title"),
+                        controller: titleController,
+                        // onChanged: (value) {
+                        //   titleInput = value;
+                        // },
+                      ),
+                      TextField(
+                        decoration: InputDecoration(labelText: "Amout"),
+                        controller: amountController,
+                        // onChanged: (value) {
+                        //   amountInput = value;
+                        // },
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text("Add Transaction"),
+                        style: TextButton.styleFrom(
+                          primary: Colors.blueAccent,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Column(
