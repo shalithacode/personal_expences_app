@@ -59,9 +59,26 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Personal Expences",
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
+        fontFamily: 'Quicksand',
+        textTheme: TextTheme(
+            headline5: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 18,
+                fontWeight: FontWeight.bold)),
+        appBarTheme: AppBarTheme(
+            titleTextStyle: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold)),
+      ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Flutter App"),
+          title: Text("Personal Expences"),
           actions: [
             Builder(builder: (context) {
               return IconButton(
@@ -81,7 +98,7 @@ class _MyAppState extends State<MyApp> {
                 Container(
                   width: double.infinity,
                   child: Card(
-                    color: Colors.blueAccent,
+                    color: Theme.of(context).primaryColor,
                     child: Text("Chart!"),
                     elevation: 5,
                   ),
